@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DatosService } from './../services/datos.service';
+import { ReservacionService } from '../services/reservacion.service';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +7,5 @@ import { DatosService } from './../services/datos.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private datosService: DatosService) {}
+  constructor(private datosService: ReservacionService) {}
 }
