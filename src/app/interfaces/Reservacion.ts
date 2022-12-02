@@ -1,8 +1,11 @@
 export interface Reservacion {
   telefonoCliente: string;
   nombreCliente: string;
-  fecha: Date;
+  fecha: string;
   costoTotal: number;
-
+  brincolin?: boolean;
+  mesaPostres?: boolean;
+  futbolito?: boolean;
+  alberca?: number
 }
 
