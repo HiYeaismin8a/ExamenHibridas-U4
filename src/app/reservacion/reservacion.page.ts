@@ -12,6 +12,7 @@ import { ReservacionService } from './../services/reservacion.service';
 })
 export class ReservacionPage implements OnInit {
   reservaciones: Reservacion[] = [];
+  hoy = new Date().toISOString()
 
   reservacion: Reservacion = {
     costoTotal: 1000,

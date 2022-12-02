@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-datetime [(ngModel)]="reservacion.fecha"></ion-datetime>
+  <ion-datetime [(ngModel)]="reservacion.fecha" [min]="hoy"></ion-datetime>
   <ion-range
     [ticks]="true"
     [snaps]="true"

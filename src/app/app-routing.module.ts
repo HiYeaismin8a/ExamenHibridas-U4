@@ -25,6 +25,13 @@ const routes: Routes = [
         (m) => m.ReservacionPageModule
       ),
   },
+  {
+    path: 'administrador',
+    loadChildren: () =>
+      import('./administrador/administrador.module').then(
+        (m) => m.AdministradorPageModule
+      ),
+  },
 ];
 
 @NgModule({

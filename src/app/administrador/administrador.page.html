@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Examen Practica 1 </ion-title>
+    <ion-title> Examen U4 </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +9,13 @@
     <ion-card>
       <ion-card-header>
         <ion-card-title color="secondary">
-          JAZMIN OCHOA BENITEZ
+          <ion-item>
+            <ion-label> ADMINISTRADOR </ion-label>
+            <ion-toggle
+              [(ngModel)]="filtrar"
+              (ionChange)="getReservaciones()"
+            ></ion-toggle>
+          </ion-item>
         </ion-card-title>
       </ion-card-header>
     </ion-card>
@@ -19,14 +25,14 @@
     <ion-row>
       <ion-col>
         <ion-list>
-            <ion-item *ngFor="let reservacion of reservaciones">
-              <ion-label>
-                {{reservacion.telefonoCliente}} <br />
-                {{reservacion.fecha}}
-                {{reservacion.nombreCliente}}
-                {{reservacion.costoTotal}}
-              </ion-label>
-            </ion-item>
+          <ion-item *ngFor="let reservacion of reservaciones">
+            <ion-label>
+              {{reservacion.telefonoCliente}} <br />
+              {{reservacion.fecha | date}} <br />
+              {{reservacion.nombreCliente}} <br />
+              {{reservacion.costoTotal | currency}}
+            </ion-label>
+          </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>

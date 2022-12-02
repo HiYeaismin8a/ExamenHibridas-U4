@@ -41,15 +41,16 @@ export class LoginPage implements OnInit {
   }
 
   async login() {
-    //this.authService.validarToken(this.myForm.get('token').value);
-    this.clientesService
-      .getCliente(this.myForm.get('token').value)
-      .then((query) => {
-        if (query.docs.length == 0) {
-          console.log('Telefono no registrado');
-        } else {
-          this.router.navigate(['/', 'reservacion', this.myForm.get('token').value]);
-        }
-      });
+    const telefono: string = this.myForm.get('token').value;
+    if (telefono.includes('admin')) {
+      this.router.navigate(['/', 'administrador']);
+    }
+    this.clientesService.getCliente(telefono).then((query) => {
+      if (query.docs.length == 0) {
+        console.log('Telefono no registrado');
+      } else {
+        this.router.navigate(['/', 'reservacion', telefono]);
+      }
+    });
   }
 }
