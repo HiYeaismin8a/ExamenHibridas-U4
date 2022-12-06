@@ -20,6 +20,7 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig), //Inicializar la app con config locales
     AngularFireDatabaseModule, //Poder utilizar las funcionalidades de firebase
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)), //FIREBASECONFIG -. Para crear un contexto con las funcionalidades de firebase
+    provideFirestore(() => getFirestore()),
   ],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
